@@ -3,12 +3,11 @@ import { checkoutPage } from "../page-object/CheckoutPage";
 import { productsPage } from "../page-object/ProductsPage";
 
 describe ("Cypress tests using POM", ()=>{
-    beforeEach("Visit test site", ()=>{
-        cy.visit("https://www.saucedemo.com/") 
-        cy.login()   
-        })
+
 
         it("Make an order for all available producs", ()=>{
+            cy.visit("https://www.saucedemo.com/") 
+            cy.login()   
             productsPage.addAllProductsToCart()
             productsPage.goToCart()
             cartPage.checkoutAnOrder()
